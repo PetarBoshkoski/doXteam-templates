@@ -1,0 +1,30 @@
+
+        {
+            props && props.id ===1? 
+        }
+
+              <FlexContainer direction="column" justify="space-between" align="center">
+          <Menus margin="10px 25% 10px 25%">Logo tuka PRV</Menus>
+          <Menus margin="10px 25% 10px 25%">QR Code tuka</Menus>
+          <Menus margin="10px 25% 10px 25%">Ime tuka</Menus>
+        </FlexContainer>  
+
+      {props.id && props.id === 1 ? (
+        <FlexContainer direction="column" justify="space-between" align="center">
+          <Menus margin="10px 25% 10px 25%">Logo tuka</Menus>
+          <Menus margin="10px 25% 10px 25%">QR Code tuka</Menus>
+          <Menus margin="10px 25% 10px 25%">Ime tuka</Menus>
+        </FlexContainer>
+      ) : props.id && props.id === 2 ? (
+        <FlexContainer direction="row" justify="space-around" align="center">
+          <Menus>
+            Logo tuka
+          </Menus>
+          <Menus alignSelf="flex-end">Ime tuka</Menus>
+          <Menus>
+            QR Code tuka
+          </Menus> 
+        </FlexContainer>
+      ) : (
+        ""
+      )}
