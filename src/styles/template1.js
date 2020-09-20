@@ -2,22 +2,32 @@ import React from "react"
 import styled from 'styled-components'
 
 export const FlexContainer = styled.div `
-display: flex;
-flex-direction:  ${props => props.direction};;
+position: relative;
 background-color: DodgerBlue;
-text-align: center;
-justify-content: ${props => props.justify};
-align-items: ${props => props.align};
-width: 100%;
+background-image:${props => `url(${props.background})`};
 height: 500px;
+border: 1px solid black;
+display = ${props => props.display};
+flex-direction: ${props => props.flexDirection};
 `;
 
 export const Menus = styled.div`
-background-color: #f1f1f1;
-margin: ${props => props.margin};
-align-self: ${props => props.alignSelf};
-line-height: 75px;
-font-size: 30px;
-float: ${props => props.float};
-bottom: ${props => props.bottom}
+position: absolute;
+text-align: center;
+width: ${props => props.width};
+top: ${props => props.top};
+right: ${props => props.right};
+bottom: ${props => props.bottom};
+left: ${props => props.left};
+word-wrap: break-word;
+`;
+
+export const StyledImg = styled.div`
+    background-image:${props => `url(${props.src})`};
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;     
 `;

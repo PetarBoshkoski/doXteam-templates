@@ -1,37 +1,30 @@
 import React from "react";
-import Template from "../templates/Template";
-import {
-  Container,
-  Row,
-  Col,
-  ToggleButtonGroup,
-  ToggleButton,
-} from "react-bootstrap";
+
+import { Container, Row, Col, ToggleButtonGroup, ToggleButton } from "react-bootstrap";
 import "../styles/template1.js";
 import { FlexContainer, Menus } from "../styles/template1";
 
-const TemplatesContainer = () => {
+const TemplatesContainer = () => { 
   return (
+
     <div className="templates-container">
       <Container>
         <Row>
           <Col>
-          <FlexContainer direction="column" justify="space-between" align="center">
-            <Menus margin="10px 25% 10px 25%">Logo tuka PRV</Menus>
-            <Menus margin="10px 25% 10px 25%">QR Code tuka</Menus>
-            <Menus alignSelf="flex-end">Ime tuka</Menus>
+          <FlexContainer>
+            <Menus top="10%" left="25%" right="25%" width="50%" >l</Menus>
+            <Menus top="50%" left="25%" right="25%" width="50%">QR Code tuka</Menus>
+            <Menus bottom="5%" left="25%" right="25" width="50%">Ime tuka</Menus>
           </FlexContainer>  
             <ToggleButtonGroup type="radio" name="options">
               <ToggleButton>Pick this!</ToggleButton>
             </ToggleButtonGroup>
           </Col>
           <Col>
-          <FlexContainer direction="row" justify="space-around" align="center">
-          <Menus>
-            Logo tuka
-          </Menus>
-          <Menus alignSelf="flex-end">Ime tuka</Menus>
-          <Menus>
+          <FlexContainer>
+          <Menus left="5%" top="50%" width="40%"> Logo tuka</Menus>
+          <Menus left="25%" bottom="5%" width="50%" >Ime tuka</Menus>
+          <Menus right="5%" top="50%" width="40%">
             QR Code tuka
           </Menus> 
           </FlexContainer>
@@ -40,10 +33,10 @@ const TemplatesContainer = () => {
             </ToggleButtonGroup>
           </Col>
           <Col>
-          <FlexContainer direction="column" justify="space-between" align="center">
-            <Menus margin="10px 25% 10px 25%">Ime tuka</Menus>
+          <FlexContainer>
+            <Menus top="5%" left="25%" width="50%">Ime tuka</Menus>
             Logoto e background
-            <Menus margin="10px 25% 10px 25%">QR Code tuka</Menus>
+            <Menus bottom="5%" right="5%">QR Code tuka</Menus>
           </FlexContainer>  
             <ToggleButtonGroup type="radio" name="options">
               <ToggleButton>Pick this!</ToggleButton>
