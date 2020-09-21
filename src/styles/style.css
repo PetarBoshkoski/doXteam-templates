@@ -1,0 +1,6 @@
+.inputs-container {
+    text-align: center;
+}
+input[type=text] {
+    width: 50%;
+}

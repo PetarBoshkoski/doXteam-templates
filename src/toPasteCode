@@ -28,3 +28,5 @@
       ) : (
         ""
       )}
+
+      onChange={(e) => setRadioChecker(e.target.value)
