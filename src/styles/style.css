@@ -4,3 +4,8 @@
 input[type=text] {
     width: 50%;
 }
+.templates-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
