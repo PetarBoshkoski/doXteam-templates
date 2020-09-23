@@ -2,10 +2,15 @@
     text-align: center;
 }
 input[type=text] {
+    margin-top: 10px;
     width: 50%;
 }
 .templates-container {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.templates-container > div {
+    margin: 1%;
+    width: 29.3%;
 }

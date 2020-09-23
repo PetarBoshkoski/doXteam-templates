@@ -1,29 +1,30 @@
-import React, { useState } from "react";
-import { Modal, Button, Row, Col, Form, Container } from "react-bootstrap";
-import { FlexContainer, Menus, StyledImg } from "../styles/template1";
+import React  from "react";
+import { Modal, Button, Row, Col, Container } from "react-bootstrap";
 import qrcode from "../images/qrcode.png";
 import TemplateOne from "./TemplateOne";
 import TemplateTwo from "./TemplateTwo";
 import TemplateThree from "./TemplateThree";
 
-const ShowTemplateModal = React.forwardRef((props, ref) => {
+const ShowTemplateModal = React.forwardRef((props) => {
   const staticTemplates = [
     {
       id: "1",
-      templateBody: <TemplateOne />,
+      templateBody: <TemplateOne {...props.customProps}/>,
     },
     {
       id: "2",
-      templateBody: <TemplateTwo />,
+      templateBody: <TemplateTwo {...props.customProps}/>,
     },
     {
       id: "3",
-      templateBody: <TemplateThree />,
+      templateBody: <TemplateThree {...props.customProps} />,
     },
   ];
+console.log(props.template_id)
   let selectedTemplate = staticTemplates
-    .filter((template) => template.id === props.idtemplate)
-    .map((item) => <div key={item.id}>{item.templateBody}</div>);
+    .filter((template) => template.id === props.template_id)
+    .map((item) => <div key={item.id}><div>{item.templateBody}</div></div>);
+
   return (
     <Modal
       {...props}

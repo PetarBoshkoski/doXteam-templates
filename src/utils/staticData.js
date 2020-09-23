@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import TemplateOne from "../components/TemplateOne";
 import TemplateTwo from "../components/TemplateTwo";
@@ -6,13 +6,13 @@ import TemplateThree from "../components/TemplateThree";
 
 // const [id,setId] = useState(null)
 
-const fun = (attr) => {
-  console.log(attr);
-};
+// const fun = (attr) => {
+//   console.log(attr);
+// };
 export const staticData = [
   {
     id: 1,
-    templateBody: <TemplateOne handleChangeLogo={fun} />,
+    templateBody: <TemplateOne />,
   },
   {
     id: 2,

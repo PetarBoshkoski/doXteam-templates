@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import InputLogo from "./InputLogo";
 import {
   Container,
@@ -21,19 +21,51 @@ const InputURL = () => {
   const [inputUrl, setUrl] = useState("");
   const [inputLogo, setLogo] = useState("");
   const [radioChecker, setRadioChecker] = useState(null);
+  // dconst [id, setRadioChecker] = useState(null);
   const [modalShow, setModalShow] = React.useState(false);
+
+  useEffect(() => {
+    console.log("I am executed")
+  }, radioChecker)
+
+  const restaurant_logo = (id) => {
+    return radioChecker === id ? inputLogo : "";
+  }
+
+  const restaurant_title = (id) => {
+    return radioChecker === id ? inputUrl : "";
+  }
+
+  const customProps = {
+    template_id: radioChecker,
+    restaurant_logo: restaurant_logo,
+    restaurant_title: restaurant_title
+  }
+ 
   const staticTemplates = [
     {
       id: "1",
-      templateBody: <TemplateOne template_id={radioChecker} restaurant_title={inputUrl} restaurant_logo={inputLogo}/>,
+      templateBody: (
+        <TemplateOne
+          {...customProps}
+        />
+      ),
     },
     {
       id: "2",
-      templateBody: <TemplateTwo template_id={radioChecker} restaurant_title={inputUrl} restaurant_logo={inputLogo}/>,
+      templateBody: (
+        <TemplateTwo
+          {...customProps}
+        />
+      ),
     },
     {
       id: "3",
-      templateBody: <TemplateThree template_id={radioChecker} restaurant_title={inputUrl} restaurant_logo={inputLogo}/>,
+      templateBody: (
+        <TemplateThree
+        {...customProps}
+        />
+      ),
     },
   ].map((item) => (
     <div key={item.id} className={item.id}>
@@ -75,14 +107,10 @@ const InputURL = () => {
 
           <ShowTemplateModal
             show={modalShow}
+            template_id={radioChecker}
             onHide={() => setModalShow(false)}
-            idtemplate={radioChecker}
-            restaurant_title={inputUrl}
-          >
-
-
-
-          </ShowTemplateModal>
+            customProps={customProps}
+          ></ShowTemplateModal>
         </div>
       </div>
     </div>
