@@ -4,13 +4,14 @@ import { FlexContainer, Menus, StyledImg } from "../styles/template1";
 const TemplateOne = (props) => {
   return (
     <FlexContainer>
-      <Menus top="5%" left="0" right="0">
+      <Menus top="5%" left="10%" right="10%" width="80%">
         <StyledImg src={props.restaurant_logo("1")} />
       </Menus>
-      <Menus top="50%" left="25%" right="25%" width="50%">
+      <Menus top="40%" left="10%" right="10%" width="80%">
         {/* <StyledImg src={qrcode} /> */}
+        <StyledImg src={props.restaurant_logo("1")} />
       </Menus>
-      <Menus bottom="5%" left="25%" right="25" width="50%">
+      <Menus bottom="5%" left="5%" right="5%" width="90%">
         {props.restaurant_title("1")}
       </Menus>
     </FlexContainer>

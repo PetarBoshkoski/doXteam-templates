@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 export const FlexContainer = styled.div`
@@ -31,17 +30,16 @@ export const Menus = styled.div`
   word-wrap: break-word;
   font-family: 'Merriweather';
   font-weight: bold;
-  background-color: #fff;
-  color: black; 
+  background-color: rgb(255, 255, 255);
   background-image: ${(props) => `url(${props.backgroundimage})`};
 `;
 
 export const StyledImg = styled.div`
   background-image: ${(props) => `url(${props.src})`};
   height: 100px;
-  max-width: 30%;
-  background-size: cover;
-  text-align: center;
-  justify-content: center;
+  max-width: 80%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   margin: 0 auto;
+  border-radius: 10px;
 `;

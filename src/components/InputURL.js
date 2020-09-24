@@ -1,18 +1,7 @@
 import React, { useState, useEffect } from "react";
-import InputLogo from "./InputLogo";
-import {
-  Container,
-  Row,
-  Col,
-  ToggleButtonGroup,
-  ToggleButton,
-} from "react-bootstrap";
 import "../styles/template1.js";
-import { FlexContainer, Menus, StyledImg } from "../styles/template1";
 import "../styles/style.css";
-import qrcode from "../images/qrcode.png";
 import ShowTemplateModal from "./ShowTemplateModal";
-import staticData from "../utils/staticData";
 import TemplateOne from "./TemplateOne";
 import TemplateTwo from "./TemplateTwo";
 import TemplateThree from "./TemplateThree";
@@ -21,51 +10,39 @@ const InputURL = () => {
   const [inputUrl, setUrl] = useState("");
   const [inputLogo, setLogo] = useState("");
   const [radioChecker, setRadioChecker] = useState(null);
-  // dconst [id, setRadioChecker] = useState(null);
+  const [templateId, setTemplateId] = useState(null);
   const [modalShow, setModalShow] = React.useState(false);
 
   useEffect(() => {
-    console.log("I am executed")
-  }, radioChecker)
+    setTemplateId(radioChecker);
+  }, [radioChecker]);
 
   const restaurant_logo = (id) => {
     return radioChecker === id ? inputLogo : "";
-  }
+  };
 
   const restaurant_title = (id) => {
     return radioChecker === id ? inputUrl : "";
-  }
+  };
 
   const customProps = {
     template_id: radioChecker,
     restaurant_logo: restaurant_logo,
-    restaurant_title: restaurant_title
-  }
- 
+    restaurant_title: restaurant_title,
+  };
+
   const staticTemplates = [
     {
       id: "1",
-      templateBody: (
-        <TemplateOne
-          {...customProps}
-        />
-      ),
+      templateBody: <TemplateOne {...customProps} />,
     },
     {
       id: "2",
-      templateBody: (
-        <TemplateTwo
-          {...customProps}
-        />
-      ),
+      templateBody: <TemplateTwo {...customProps} />,
     },
     {
       id: "3",
-      templateBody: (
-        <TemplateThree
-        {...customProps}
-        />
-      ),
+      templateBody: <TemplateThree {...customProps} />,
     },
   ].map((item) => (
     <div key={item.id} className={item.id}>
@@ -107,9 +84,9 @@ const InputURL = () => {
 
           <ShowTemplateModal
             show={modalShow}
-            template_id={radioChecker}
+            template_id={templateId}
             onHide={() => setModalShow(false)}
-            customProps={customProps}
+            custom_props={customProps}
           ></ShowTemplateModal>
         </div>
       </div>
