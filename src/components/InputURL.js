@@ -5,13 +5,14 @@ import ShowTemplateModal from "./ShowTemplateModal";
 import TemplateOne from "./TemplateOne";
 import TemplateTwo from "./TemplateTwo";
 import TemplateThree from "./TemplateThree";
+import QrCode from "qrcode.react";
 
 const InputURL = () => {
   const [inputUrl, setUrl] = useState("");
   const [inputLogo, setLogo] = useState("");
   const [radioChecker, setRadioChecker] = useState(null);
   const [templateId, setTemplateId] = useState(null);
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
     setTemplateId(radioChecker);
@@ -25,10 +26,15 @@ const InputURL = () => {
     return radioChecker === id ? inputUrl : "";
   };
 
+  const restaurant_qrcode = (id) => {
+    return restaurant_title(id) ? <QrCode value={restaurant_title(id)} /> : "";
+  };
+
   const customProps = {
     template_id: radioChecker,
     restaurant_logo: restaurant_logo,
     restaurant_title: restaurant_title,
+    restaurant_qrcode: restaurant_qrcode,
   };
 
   const staticTemplates = [
@@ -79,6 +85,7 @@ const InputURL = () => {
         <button disabled={!radioChecker} onClick={() => setModalShow(true)}>
           Generate
         </button>
+
         <div className="templates-container">
           {staticTemplates}
 

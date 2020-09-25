@@ -1,5 +1,6 @@
 import React from "react";
-import { FlexContainer, Menus, StyledImg } from "../styles/template1";
+import { FlexContainer, Menus } from "../styles/template1";
+import QrCode from "qrcode.react";
 
 const TemplateThree = (props) => {
   return (
@@ -8,7 +9,7 @@ const TemplateThree = (props) => {
         {props.restaurant_title("3")}
       </Menus>
       <Menus bottom="5%" right="5%">
-        {/* <StyledImg src={qrcode} /> */}
+        {props.restaurant_qrcode("3")}
       </Menus>
     </FlexContainer>
   );
